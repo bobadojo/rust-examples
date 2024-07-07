@@ -1,0 +1,15 @@
+[package]
+name = "rust-examples"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+# Common dependencies
+tokio = { version = "1.0", features = ["rt-multi-thread", "macros"] }
+prost = "0.12"
+tonic = "0.11.0"
+bobadojo-apis = { git = "https://github.com/bobadojo/rust.git", rev="36503cea0d53971970959980841575c105aa644a", features = ["bobadojo-stores-v1"] }
+
+# Optional dependencies
+prost-types = { version = "0.12", optional = true }
