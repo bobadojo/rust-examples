@@ -14,6 +14,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             ..Default::default()
         }))
         .await?;
-    println!("stores={:?}", response);
+    let mut i = 0;
+    for store in response.get_ref().stores.iter() {
+        println!("{} stores={:?}", i, store);
+        i += 1;
+    }
     Ok(())
 }
